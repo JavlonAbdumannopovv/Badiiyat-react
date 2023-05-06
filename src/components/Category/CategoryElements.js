@@ -54,5 +54,4 @@ export const SearchMain = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  background: #333;
 `; 
