@@ -1,10 +1,10 @@
 import { useState } from "react";
-import Category from "../Category/Category";
+
 import Header from "../Header/Header";
 import { Main } from "./BookMarketEL";
 import AuthorDetails from "../AuthorDetails/AuthorDetails";
-import Hero from "../Hero/Hero";
-import Search from "../Search/Search";
+import { Route, Routes } from "react-router-dom";
+import Home from "../Home/Home";
 
 function BookMarket() {
   const [styleMain, setStyleMain] = useState({ display: "block" });
@@ -17,17 +17,20 @@ function BookMarket() {
   return (
     <div className="App">
       <Header />
-      <Main style={styleMain}>
-        <Hero />
-        <Search setMainStyle={setMainStyle} />
-        <Category
-          setMainStyle={setMainStyle}
-          mainStyle={mainStyle}
-          setStyleMain={setStyleMain}
-          setId={setId}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home
+              setStyleMain={setStyleMain}
+              setId={setId}
+              setMainStyle={setMainStyle}
+              mainStyle={mainStyle}
+            />
+          }
         />
-      </Main>
-      {styleMain.display === "none" ? <AuthorDetails id={id} /> : null}
+        <Route path="/author" element={<AuthorDetails id={id} />} />
+      </Routes>
     </div>
   );
 }

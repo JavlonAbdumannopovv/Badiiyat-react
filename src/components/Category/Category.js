@@ -9,6 +9,7 @@ import {
 } from "./CategoryElements";
 import Author from "../Author/Author";
 import { badiiyat } from "../Data/data";
+import { Link } from "react-router-dom";
 
 const initialStyle = [
   {
@@ -45,7 +46,7 @@ function Category({ setStyleMain, setId , mainStyle, setMainStyle}) {
     return badiiyat.data.map((item) => {
       if (item.type === type) {
         return (
-          <div key={item.author.id} onClick={() => sendData(item.author.id)}>
+          <Link to="/author" key={item.author.id} onClick={() => sendData(item.author.id)}>
             <Author
               url={item.author.url}
               name={item.author.name}
@@ -54,7 +55,7 @@ function Category({ setStyleMain, setId , mainStyle, setMainStyle}) {
               read={item.author.read}
               listen={item.author.listen}
             />
-          </div>
+          </Link>
         );
       }
     });

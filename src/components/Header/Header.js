@@ -8,12 +8,15 @@ import {
   AccountWrapper,
 } from "./HeaderElements";
 import accountImg from "../../assets/account.svg";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <Container>
       <LogoWrapper>
-        <Logo>BADIIYAT</Logo>
+        <Link to="/">
+          <Logo>BADIIYAT</Logo>
+        </Link>
       </LogoWrapper>
       <Nav>
         <NavItem >Bosh sahifa</NavItem>
