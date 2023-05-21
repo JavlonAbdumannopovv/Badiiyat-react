@@ -8,7 +8,6 @@ export const Container = styled.div`
   align-items: center;
   padding: 0 80px;
   border-bottom: 1px solid #c9ac8c;
-  background: red;
 `;
 
 export const LogoWrapper = styled.div`
