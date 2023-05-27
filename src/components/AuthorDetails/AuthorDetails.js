@@ -43,8 +43,8 @@ function AuthorDetails({ id, setId }) {
     setId(id);
   };
 
-  let pathname = window.location.pathname;
-  pathname = pathname[pathname.length - 1];
+  // let pathname = window.location.pathname;
+  // pathname = pathname[pathname.length - 1];
   useEffect(() => {
     setItem(() => {
       const data = badiiyat.data.filter((item) => item.id === id);
