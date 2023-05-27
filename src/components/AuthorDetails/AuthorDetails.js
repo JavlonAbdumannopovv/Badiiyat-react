@@ -94,7 +94,7 @@ function AuthorDetails({ id, setId }) {
           </InfoWrapper>
           <BooksWrapper>
             <BooksTop>
-              <BooksTitle>ASARLARI</BooksTitle>{" "}
+              <BooksTitle>ASARLARI</BooksTitle>
               <Link to="/books">
                 <BooksAll>Barchasini ko`rish</BooksAll>
               </Link>
