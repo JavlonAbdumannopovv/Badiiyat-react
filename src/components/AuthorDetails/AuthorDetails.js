@@ -60,7 +60,7 @@ function AuthorDetails({ id, setId }) {
           <ImageWrapper>
             <img
               width="582px"
-              height="779.33px"
+              height="779.34px"
               style={style}
               src={item.author.url}
               alt={item.author.name}
