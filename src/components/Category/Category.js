@@ -1,15 +1,11 @@
-import React, { useState } from "react";
+import React, {  useState } from "react";
 import {
   Container,
   TopTitle,
   TitleWrapper,
   Title,
-  Main,
-  SearchMain,
 } from "./CategoryElements";
-import Author from "../Author/Author";
-import { badiiyat } from "../Data/data";
-import { Link } from "react-router-dom";
+
 
 const initialStyle = [
   {
@@ -30,55 +26,11 @@ const initialStyle = [
   },
 ];
 
-function Category({ setStyleMain, setId , mainStyle, setMainStyle}) {
-  const [type, setType] = useState("Tarixiy");
+function Category({ setType , setMainStyle}) {
+
   const [style, setStyle] = useState(initialStyle);
 
 
-  const sendData = (id) => {
-    setStyleMain((prev) => {
-      return { ...prev, display: "none" };
-    });
-    setId(id);
-  };
-
-  const authorHandler = () => {
-    return badiiyat.data.map((item) => {
-      if (item.type === type) {
-        return (
-          <Link to="/author" key={item.author.id} onClick={() => sendData(item.author.id)}>
-            <Author
-              url={item.author.url}
-              name={item.author.name}
-              born={item.author.born}
-              dead={item.author.dead}
-              read={item.author.read}
-              listen={item.author.listen}
-            />
-          </Link>
-        );
-      }
-    });
-  };
-
-  const searchAuthorHandler = () => {
-    return badiiyat.data.map((item) => {
-      if (item.author.name.toLowerCase().includes(mainStyle.data.toLowerCase())) {
-        return (
-          <div key={item.author.id} onClick={() => sendData(item.author.id)}>
-            <Author
-              url={item.author.url}
-              name={item.author.name}
-              born={item.author.born}
-              dead={item.author.dead}
-              read={item.author.read}
-              listen={item.author.listen}
-            />
-          </div>
-        );
-      }
-    });
-  };
 
   const titleClickHandler = (elType, key) => {
     setMainStyle((prev) => {
@@ -121,10 +73,6 @@ function Category({ setStyleMain, setId , mainStyle, setMainStyle}) {
           </Title>
         ))}
       </TitleWrapper>
-      <Main style={mainStyle}>{authorHandler()}</Main>
-      {mainStyle.display === "none" ? (
-        <SearchMain> {searchAuthorHandler()} </SearchMain>
-      ) : null}
     </Container>
   );
 }

@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   align-items: flex-start;
   padding: 0 0 50px;
+  overflow: hidden;
 `;
 
 export const ColFirst = styled.div`
@@ -112,7 +113,7 @@ export const Name = styled.div`
   font-size: 55px;
   text-transform: uppercase;
   line-height: 53px;
-  text-decoration: uppercase;           
+  text-decoration: uppercase;
   color: #c9ac8c;
 `;
 
@@ -181,6 +182,11 @@ export const BooksAll = styled.div`
   line-height: 16px;
   color: #ffffff;
   cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #c9ac8c;
+  }
 `;
 
 export const BooksMain = styled.div`
@@ -188,41 +194,4 @@ export const BooksMain = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-`;
-
-export const Book = styled.div`
-  width: 165px;
-  text-align: flex-start !important;
-  cursor: pointer;
-`;
-
-export const BookImg = styled.div`
-  border-radius: 15px;
-  width: 164.15px;
-  height: 246.23px;
-  overflow: hidden;
-`;
-
-export const BookName = styled.div`
-  font-family: "Style Script";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 22px;
-  text-transform: uppercase;
-  color: #c9ac8c;
-  margin: 17px 0 0;
-`;
-
-export const BookFooter = styled.div`
-  width: 115px;
-  height: 17px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 144.4%;
 `;

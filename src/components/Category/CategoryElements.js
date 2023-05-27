@@ -42,16 +42,4 @@ export const Title = styled.p`
   }
 `;
 
-export const Main = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-`;
 
-export const SearchMain = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  flex-wrap: wrap;
-`; 

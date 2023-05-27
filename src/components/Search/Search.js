@@ -2,7 +2,7 @@ import React from "react";
 import searchIcon from "../../assets/searchIcon.svg";
 import { Content, Title, InputWrapper, Button } from "./SearchDetails";
 
-function Search({ setMainStyle }) {
+function Search({ setMainStyle , mainStyle }) {
   const inputStyle = {
     width: "709.58px",
     height: "47.02px",
@@ -44,6 +44,7 @@ function Search({ setMainStyle }) {
       <Title>Qidirish</Title>
       <InputWrapper>
         <input
+          value={mainStyle.data}
           onChange={searchAuthor}
           style={inputStyle}
           type="text"

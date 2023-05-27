@@ -1,20 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import Hero from "../Hero/Hero";
 import Search from "../Search/Search";
 import Category from "../Category/Category";
+import Authors from "./Authors/Authors";
 
-const Home = ({setMainStyle, mainStyle, setStyleMain, setId}) => {
-
+const Home = ({setMainStyle, mainStyle, setStyleMain, setId, id}) => {
+  const [type, setType] = useState("Tarixiy");
   return (
     <>
       <Hero />
-      <Search setMainStyle={setMainStyle} />
+      <Search setMainStyle={setMainStyle} mainStyle={mainStyle}/>
       <Category
         setMainStyle={setMainStyle}
-        mainStyle={mainStyle}
-        setStyleMain={setStyleMain}
-        setId={setId}
+        setType={setType}
       />
+      <Authors type={type} setId={setId} mainStyle={mainStyle}/>
     </>
   );
 };
